@@ -1,19 +1,26 @@
 {
   "name": "aws-cli-ai",
-  "private": true,
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
+  "module": "index.ts",
+  "type": "module",
+  "private": false,
+  "bin": {
+    "aws-cli-ai": "./aws-cli-ai"
+  },
   "scripts": {
-    "dev": "turbo dev",
-    "build": "turbo build",
-    "lint": "turbo lint",
-    "typecheck": "turbo typecheck"
+    "start": "./aws-cli-ai"
   },
   "devDependencies": {
-    "turbo": "^2.0.0",
-    "typescript": "^5.0.0"
+    "@types/bun": "latest"
   },
-  "packageManager": "bun@1.0.0"
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@ai-sdk/amazon-bedrock": "^4.0.63",
+    "ai": "^6.0.97",
+    "commander": "^14.0.3",
+    "dotenv": "^17.3.1",
+    "glob": "^13.0.6",
+    "zod": "^4.3.6"
+  }
 }
